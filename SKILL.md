@@ -2,7 +2,7 @@
 name: surgical-development
 description: Use for clearly scoped code or configuration changes, focused bug fixes, implementation summaries, or complex flow/configuration explanations. Prefer the smallest complete change, proportionate verification, concise diagrams, and immediate stopping. Do not use its fixed small-change workflow for open-ended architecture, broad exploration, or requirements that still need business clarification.
 metadata:
-  version: 0.1.0
+  version: "1.0.0"
 ---
 
 # Surgical development
@@ -55,7 +55,7 @@ Never omit validation at trust boundaries, data-loss prevention, security handli
 - Match the existing language, structure, naming, and test/build conventions of the surrounding code.
 - Preserve unrelated changes and user modifications.
 - For bug fixes, fix the root cause once at the owning layer; do not duplicate the same guard across callers unless the caller-specific context genuinely requires it.
-- Keep comments in Chinese. Add or update comments only for important business rules, compatibility, boundaries, exceptions, performance/security tradeoffs, and non-obvious reasons. Do not add comments that merely restate code.
+- Keep comments in Chinese and consistent with the code. Explain important rules and non-obvious reasons with accurate domain terms; distinguish business behavior from display, response, and export formatting.
 - If a deliberate shortcut has a known limit, note the limit and upgrade condition in one concise comment only when that limitation is not obvious from the code.
 
 Git operations that alter history or remote state require explicit user authorization. Unless the user explicitly asks, do not commit, merge, push, create tags, or create merge requests; leave worktree changes for review.
@@ -66,7 +66,7 @@ Git operations that alter history or remote state require explicit user authoriz
 - Run verification proportionate to risk:
   - Literal or configuration-only change: inspect the diff and run a syntax or loading check when needed.
   - Local code change: run the focused test, compile, lint, or nearest affected check.
-  - Risky branch, data, security, concurrency, or contract-adjacent logic: run an existing targeted regression proof. Add a new test only when the user explicitly requests it or a project rule requires it.
+  - Risky branch, data, security, concurrency, or contract-adjacent logic: use an existing targeted regression proof. Creating or changing tests requires explicit user authorization.
 - Do not run full repository scans, broad test suites, builds, database queries, or cross-repository investigations merely because they might help. They must be required by project rules, requested by the user, or justified by a concrete risk.
 - Reuse a still-current verification result only when the repository state and relevant inputs have not changed.
 - If a command or tool fails, read the error and correct the invocation once. If the same failure continues, stop that path and report the exact blocker.

@@ -1,5 +1,7 @@
 # Surgical Development
 
+Version 1.0.0.
+
 A Codex skill for clearly scoped code and configuration changes. It combines:
 
 - The surgical-change discipline from [andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills).
@@ -27,6 +29,19 @@ Or ask Codex to install `changzh1yuan/surgical-development`.
 
 Invoke it explicitly with `$surgical-development`, or let Codex select it automatically for a matching task.
 
+## Instruction precedence
+
+The skill complements the user's instructions and project-specific `AGENTS.md`.
+Project branch, baseline, identity, and approval rules continue to apply.
+Installing the skill does not authorize commits, pushes, schema changes, dependency
+changes, or additional tests.
+
+## Scope of validation
+
+The package has been checked for YAML structure, metadata, relative references,
+and consistency with representative task scenarios. These checks do not establish
+a measured reduction in model calls or end-to-end latency.
+
 ## License
 
-MIT
+MIT. See [LICENSE](LICENSE) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
