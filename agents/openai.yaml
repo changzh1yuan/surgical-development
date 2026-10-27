@@ -1,0 +1,6 @@
+interface:
+  display_name: "Surgical Development"
+  short_description: "小范围直改、最小核查、完成即停"
+  default_prompt: "Use $surgical-development to make this clearly scoped code change with minimum necessary verification."
+policy:
+  allow_implicit_invocation: true
